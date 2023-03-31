@@ -4,6 +4,7 @@ import './App.css';
 import ProductForm from './components/ProductForm'
 import Shop from './components/Shop'
 import ShopOne from './components/ShopOne';
+import EditForm from './components/EditForm';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path='/display' element={<Shop productList={productList} setProductList={setProductList} />} />
           <Route path='/display/:id' element={<ShopOne />} />
+          <Route path='/edit/:id' element={<EditForm productList={productList} setProductList={setProductList}/>} />
           <Route path='/create' element={<ProductForm productList={productList} setProductList={setProductList} />} />
         </Routes>
       </div>

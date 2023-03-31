@@ -8,7 +8,7 @@ module.exports = {
                 res.status(201).json(allProducts)
             })
             .catch((err) => {
-                console.log("getAll: Something went wrong: ", err)
+                res.status(500).json("UpdateOne: Something went wrong: " , err)
             })
     },
 
@@ -18,7 +18,7 @@ module.exports = {
                 res.status(201).json(newProduct)
             })
             .catch((err) => {
-                console.log("create: Something went wrong: ", err )
+                res.status(500).json("UpdateOne: Something went wrong: " , err)
             })
     },
 
@@ -28,17 +28,17 @@ module.exports = {
                 res.status(201).json(oneProduct)
             })
             .catch((err) => {
-                console.log("getOne: Something went wrong: ", err)
+                res.status(500).json("UpdateOne: Something went wrong: " , err)
             })
     },
 
     updateProduct: (req, res) => {
-        Product.findOneAndUpdate({_id: req.params.id})
+        Product.findOneAndUpdate({_id: req.params.id}, req.body, {new:true, runValidators:true})
             .then((updatedProduct) => {
                 res.status(201).json(updatedProduct)
             })
             .catch((err) => {
-                console.log("update: Something went wrong: " , err)
+                res.status(400).json("UpdateOne: Something went wrong: " , err)
             })
     },
 
@@ -48,7 +48,7 @@ module.exports = {
                 res.status(201).json(deletedProduct)
             })
             .catch((err) => {
-                console.log("delete: Something went wrong: " , err)
+                res.status(500).json("UpdateOne: Something went wrong: " , err)
             })
     }
 

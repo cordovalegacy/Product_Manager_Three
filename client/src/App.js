@@ -23,7 +23,7 @@ function App() {
         <Routes>
           <Route path='/display' element={<Shop productList={productList} setProductList={setProductList} />} />
           <Route path='/display/:id' element={<ShopOne />} />
-          <Route path='/edit/:id' element={<EditForm productList={productList} setProductList={setProductList}/>} />
+          <Route path='/edit/:id' element={<EditForm setProductList={setProductList}/>} />
           <Route path='/create' element={<ProductForm productList={productList} setProductList={setProductList} />} />
         </Routes>
       </div>

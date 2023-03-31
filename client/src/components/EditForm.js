@@ -4,7 +4,7 @@ import axios from 'axios'
 
 const EditForm = (props) => {
 
-    const { productList, setProductList } = props
+    const { setProductList } = props
 
     const { id } = useParams()
     const navigate = useNavigate()

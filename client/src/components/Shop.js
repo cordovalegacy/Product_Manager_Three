@@ -36,7 +36,7 @@ const Shop = (props) => {
 
     return (
         <div className="flex flex-wrap items-center justify-evenly my-3">
-            {productList.map((product, idx) => (
+            {productList[0] ? productList.map((product, idx) => (
                 <div className="w-96 h-48 bg-stone-700 text-lg text-amber-400 m-1 rounded p-5" key={idx}>
                     <h5 className="font-bold text-white underline">{product.title}</h5>
                     <p className="">Price: {product.price}</p>
@@ -53,7 +53,7 @@ const Shop = (props) => {
                         </div>
                     </div>
                 </div>
-            ))}
+            )):null}
         </div>
     );
 };
